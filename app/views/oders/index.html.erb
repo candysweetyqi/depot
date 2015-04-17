@@ -1,0 +1,33 @@
+<h1>Listing oders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Email</th>
+      <th>Pay type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @oders.each do |oder| %>
+      <tr>
+        <td><%= oder.name %></td>
+        <td><%= oder.address %></td>
+        <td><%= oder.email %></td>
+        <td><%= oder.pay_type %></td>
+        <td><%= link_to 'Show', oder %></td>
+        <td><%= link_to 'Edit', edit_oder_path(oder) %></td>
+        <td><%= link_to 'Destroy', oder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Oder', new_oder_path %>
